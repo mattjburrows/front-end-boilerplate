@@ -1,0 +1,31 @@
+/**
+ * sass > screen.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ *
+ * This file acts as an import base for all the Application styling.
+ * Styling is split into logical groups to make it easy to modularise the code.
+ *
+ * For more information please take a look at the Essence Digital Coding Standards site - http://essencedigital.github.com/coding-standards/
+ */
+
+
+/* INCLUDE COMPASS MIXINS
+ * 
+ * This give you full access to the Compass mixin library - http://compass-style.org/reference/compass/
+ * 
+ ******************************/
+@import "compass/reset";
+@import "compass/css3";
+
+/* INCLUDE CUSTOM HELPERS
+ ******************************/
+@import "helpers/variables";
+@import "helpers/mixins";
+
+/* INCLUDE UI STYLING
+ ******************************/
+@import "ui/fonts";
+
+/* INCLUDE LAYOUT STYLING
+ ******************************/
+@import "layout";

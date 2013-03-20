@@ -1,0 +1,24 @@
+/**
+ * sass > helpers > mixins.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ *
+ * SASS Mixins are useful to automate common styling patterns.
+ * Mixins can be used throughout your SASS files by using @include [MIXIN NAME]
+ */
+
+@mixin clearfix {
+    *zoom:1;
+    &:before,
+    &:after{
+        content:' ';
+        display:table;
+    }
+    &:after{ clear:both; }
+}
+
+@mixin inline-block {
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    vertical-align:middle;
+}

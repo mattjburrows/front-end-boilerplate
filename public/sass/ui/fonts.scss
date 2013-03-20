@@ -1,0 +1,51 @@
+/**
+ * sass > ui > fonts.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ */
+
+/* HEADING STYLING
+ ******************************/
+
+h1, .h1{ }
+h2, .h2{ }
+h3, .h3{ }
+h4, .h4{ }
+h5, .h5{ }
+h6, .h6{ }
+
+
+/* BASIC TEXT STYLING
+ ******************************/
+
+p{ }
+
+small{ }
+
+address{ }
+
+em,
+i{ font-style:italic; }
+
+strong,
+b{ font-weight:700; }
+
+del{
+    color:#f00;
+    text-decoration:line-through;
+}
+
+a{ }
+
+
+/* LIST STYLING
+ ******************************/
+
+ul{
+    li{ }
+    ul{ }
+}
+
+ol{
+    li{ }
+    ol{ }
+}

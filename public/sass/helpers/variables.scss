@@ -1,0 +1,22 @@
+/**
+ * sass > helpers > variables.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ *
+ * SASS Variables are useful to save rewriting the same values over and over in your styles.
+ * Variables can be used throughout your SASS files by using $[VAR NAME]
+ */
+
+/* ESSENCE BRAND COLOURS
+ ******************************/
+
+$brand-primary-one: #0361a1; // Dark blue.
+$brand-primary-two: #32a8e0; // Light blue.
+$brand-primary-three: #ee2328; // Red.
+$brand-primary-four: #333; // Grey.
+
+$brand-secondary-one: #ffc513; // Yellow.
+$brand-secondary-two: #f19622; // Orange.
+$brand-secondary-three: #8ac540; // Green.
+
+$white: #fff;
+$black: #000;
