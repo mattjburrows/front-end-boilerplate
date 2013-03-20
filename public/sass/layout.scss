@@ -1,5 +1,5 @@
 /**
- * sass > ui> layout.scss
+ * sass > ui > layout.scss
  * @author Matthew Burrows <matthew.burrows@essencedigital.com>
  */
 
@@ -7,4 +7,7 @@ html{
     background-color:$white;
     font-size:16px;
 }
-body{ }
+body{
+    width: gutter-grid( 1, 12, percentage( 10px / 960px ) );
+    margin:0 percentage( 10px / 960px );
+}

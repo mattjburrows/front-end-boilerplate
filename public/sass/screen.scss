@@ -19,12 +19,13 @@
 
 /* INCLUDE CUSTOM HELPERS
  ******************************/
-@import "helpers/variables";
 @import "helpers/mixins";
+@import "helpers/variables";
 
 /* INCLUDE UI STYLING
  ******************************/
 @import "ui/fonts";
+@import "ui/grid";
 
 /* INCLUDE LAYOUT STYLING
  ******************************/

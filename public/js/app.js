@@ -10,4 +10,10 @@
 		$doc = $(document),
 		Ess  = Ess || {};
 
+    console.log( {
+        msg: 'Welcome to the Essence digital frontend boilerplate',
+        win: $win,
+        doc: $doc
+    } );
+
 } )( jQuery );

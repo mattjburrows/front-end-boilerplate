@@ -1,0 +1,17 @@
+/**
+ * sass > ui > grid.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ * 
+ * This file will build up the code for a responsive fluid layout using %
+ */
+
+
+// Function for working out the column widths on a grid.
+@function simple-grid( $count, $columns ) {
+    @return ( 100% / $count ) * $columns;
+}
+
+// Function for working out the column widths on a grid minus the guttering.
+@function gutter-grid( $count, $columns, $gutter ) {
+    @return ( ( 100% / $columns ) - ( $gutter * 2 ) ) * $count;
+}

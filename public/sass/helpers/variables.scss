@@ -20,3 +20,12 @@ $brand-secondary-three: #8ac540; // Green.
 
 $white: #fff;
 $black: #000;
+
+/* MEDIA QUERY BREAKPOINTS
+ * 
+ * Set up the media queries to run off ems instead of px.
+ *
+ ******************************/
+$desktop: ems( 960, 16 );
+$tablet: ems( 768, 16 );
+$mobile: ems( 480, 16 );
