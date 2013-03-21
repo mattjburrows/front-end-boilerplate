@@ -15,6 +15,9 @@ Welcome to the Essence Digital front-end development boilerplate. The thought be
 
 # Usage
 
+* Download the project and un-zip the project in your folder structure on your development environment.
+* Open up __package.json__ and edit the _name_ property to the name of your project.
+
 ## Grunt
 
 ### Sass
