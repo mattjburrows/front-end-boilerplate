@@ -7,7 +7,6 @@ Essence Digital Front-end Boilerplate
         * [Sass](#sass)
         * [Uglify](#uglify)
         * [Watching files](#watching-files)
-    * 
 
 # Introduction
 
@@ -19,6 +18,10 @@ Welcome to the Essence Digital front-end development boilerplate. The thought be
 * Open up __package.json__ and edit the _name_ property to the name of your project.
 
 ## Grunt
+
+* Open up Terminal (or whatever interface you use to use to access the command line) and locate the root directory of your new project.
+* Make sure you can see the __Gruntfile.js__ and __package.json__ files in the folder and then type in _grunt_
+    * What this will do is run the tasks that have been set up in __Gruntfile.js__, you can see by default it has SASS, Uglify and Watch setup by default.
 
 ### Sass
 
