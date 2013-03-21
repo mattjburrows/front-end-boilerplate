@@ -6,12 +6,18 @@
  */
 
 
-// Function for working out the column widths on a grid.
+/*
+ * Usage: simple-grid( $a, $b );
+ * Function for working out the column widths on a grid.
+ */
 @function simple-grid( $count, $columns ) {
     @return ( 100% / $count ) * $columns;
 }
 
-// Function for working out the column widths on a grid minus the guttering.
+/*
+ * Usage: gutter-grid( $a, $b, $c );
+ * Function for working out the column widths on a grid minus the guttering.
+ */
 @function gutter-grid( $count, $columns, $gutter ) {
     @return ( ( 100% / $columns ) - ( $gutter * 2 ) ) * $count;
 }

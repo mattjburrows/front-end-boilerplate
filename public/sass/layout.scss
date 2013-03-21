@@ -8,6 +8,17 @@ html{
     font-size:16px;
 }
 body{
-    width: gutter-grid( 1, 12, percentage( 10px / 960px ) );
-    margin:0 percentage( 10px / 960px );
+    & > section{
+        min-width:320px;
+        max-width:960px;
+        margin:0 auto;
+        @include clearfix;
+        article{
+            width:gutter-grid( 1, 12, percentage( 10px / 960px ) );
+            margin:0 percentage( 10px / 960px );
+            float:left;
+            display:block;
+            background-color:rgba( 255,0,0,.33 );
+        }
+    }
 }

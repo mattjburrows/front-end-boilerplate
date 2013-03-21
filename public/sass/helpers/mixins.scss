@@ -6,7 +6,10 @@
  * Mixins can be used throughout your SASS files by using @include [MIXIN NAME]
  */
 
-// Create a simple mixin for clearing floats.
+/*
+ * Usage: @include clearfix;
+ * Create a simple mixin for clearing floats.
+ */
 @mixin clearfix {
     *zoom:1;
     &:before,
@@ -17,7 +20,10 @@
     &:after{ clear:both; }
 }
 
-// Create a simple mixin for older browsers to support display: inlin-block;
+/*
+ * Usage: @include inline-block;
+ * Create a simple mixin for older browsers to support display: inlin-block;
+ */
 @mixin inline-block {
     display:inline-block;
     *display:inline;
@@ -25,12 +31,10 @@
     vertical-align:middle;
 }
 
-// Create a function to convert pixel values into ems.
-@function ems( $a, $b ) {
-    @return ( $a / $b ) + em;
-}
-
-// Create a mixin to return a vendor specific property.
+/*
+ * Usage: @include vendor( $a, $b );
+ * Create a mixin to return a vendor specific property.
+ */
 @mixin vendor( $property, $value ) {
     -webkit-#{$property}: $value;
        -moz-#{$property}: $value;
@@ -39,25 +43,32 @@
             #{$property}: $value;
 }
 
-// Create a mixin to return a vendor specific animation.
+/*
+ * Usage: keyframe( $a ) { $b };
+ * Create a mixin to return vendor specific animations.
+ */
 @mixin keyframe ( $animation-name ) {
     @-webkit-keyframes $animation-name {
         @content;
     }
-
     @-moz-keyframes $animation-name {
         @content;
     }
-
     @-ms-keyframes $animation-name {
         @content;
     }
-
     @-o-keyframes $animation-name {
         @content;
     }
-
     @keyframes $animation-name {
         @content;
     }
+}
+
+/*
+ * Usage: @include ems( $a, $b );
+ * Create a function to convert pixel values into ems.
+ */
+@function ems( $a, $b ) {
+    @return ( $a / $b ) * 1em;
 }
