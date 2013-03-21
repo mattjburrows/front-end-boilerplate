@@ -1,12 +1,12 @@
-front-end-boilerplate
-=====================
+Essence Digital Front-end Boilerplate
+=====================================
 
-* Introduction
-* Usage
-    * Grunt
-        * Sass
-        * Uglify
-        * Watching files
+* [Introduction](#introduction)
+* [Usage](#usage)
+    * [Grunt](#grunt)
+        * [Sass](#sass)
+        * [Uglify](#uglify)
+        * [Watching files](#watching-files)
 
 # Introduction
 
