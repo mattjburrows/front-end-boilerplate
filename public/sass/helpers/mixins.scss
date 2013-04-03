@@ -47,7 +47,7 @@
  * Usage: keyframe( $a ) { $b };
  * Create a mixin to return vendor specific animations.
  */
-@mixin keyframe ( $animation-name ) {
+@mixin keyframe( $animation-name ) {
     @-webkit-keyframes $animation-name {
         @content;
     }

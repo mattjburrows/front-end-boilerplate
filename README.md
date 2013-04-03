@@ -26,6 +26,18 @@ What this will do is run the tasks that have been set up in __Gruntfile.js__, yo
 
 ### Sass
 
+In the Gruntfile.js you can see that we reference the [grunt-contrib-sass](https://github.com/gruntjs/grunt-contrib-sass) package which will compile our SASS scripts into native CSS.
+
+To run the SASS tasks separately type _"grunt sass"_ into your terminal window.
+
 ### Uglify
 
+In the Gruntfile.js you can see we reference the [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify) package which will minify and concatenate the JavaScript files we declare.
+
+To run the Uglify tasks separately type _"grunt uglify"_ into your terminal window.
+
 ### Watching files
+
+In the Gruntfile.js you can see we reference the [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch) package which will run the tasks that we specify, namely the SASS and Uglify tasks.
+
+To watch changes on the files specified in the Gruntfile.js script type _"grunt watch"_ into your terminal window.
