@@ -8,7 +8,11 @@
 
 	var $win = $(window),
 		$doc = $(document),
-		Ess  = Ess || {};
+		Ess  = Ess || function() {};
+
+    Ess.prototype.test = function() {
+        return 'This is a test';
+    };
 
     console.log( {
         msg: 'Welcome to the Essence digital frontend boilerplate',

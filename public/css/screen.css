@@ -1,1 +1,192 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font:inherit;font-size:100%;vertical-align:baseline}html{line-height:1}ol,ul{list-style:none}table{border-collapse:collapse;border-spacing:0}caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}q,blockquote{quotes:none}q:before,q:after,blockquote:before,blockquote:after{content:"";content:none}a img{border:none}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{display:block}p{font-size:0.875em}em,i{font-style:italic}strong,b{font-weight:700}del{color:#f00;text-decoration:line-through}html{background-color:#fff;font-size:16px}body{background:blue}body>section{min-width:320px;max-width:960px;margin:0 auto;*zoom:1}body>section:before,body>section:after{content:' ';display:table}body>section:after{clear:both}body>section article{width:6.25%;margin:0 1.04167%;float:left;display:block;background-color:rgba(255,0,0,0.33)}
+/**
+ * sass > screen.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ *
+ * This file acts as an import base for all the Application styling.
+ * Styling is split into logical groups to make it easy to modularise the code.
+ *
+ * For more information please take a look at the Essence Digital Coding Standards site - http://essencedigital.github.com/coding-standards/
+ */
+/* INCLUDE COMPASS MIXINS
+ *
+ * This give you full access to the Compass mixin library - http://compass-style.org/reference/compass/
+ *
+ ******************************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* INCLUDE CUSTOM HELPERS
+ ******************************/
+/**
+ * sass > helpers > mixins.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ *
+ * SASS Mixins are useful to automate common styling patterns.
+ * Mixins can be used throughout your SASS files by using @include [MIXIN NAME]
+ */
+/*
+ * Usage: @include clearfix;
+ * Create a simple mixin for clearing floats.
+ */
+/*
+ * Usage: @include inline-block;
+ * Create a simple mixin for older browsers to support display: inlin-block;
+ */
+/*
+ * Usage: @include vendor( $a, $b );
+ * Create a mixin to return a vendor specific property.
+ */
+/*
+ * Usage: keyframe( $a ) { $b };
+ * Create a mixin to return vendor specific animations.
+ */
+/*
+ * Usage: @include ems( $a, $b );
+ * Create a function to convert pixel values into ems.
+ */
+/**
+ * sass > helpers > variables.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ *
+ * SASS Variables are useful to save rewriting the same values over and over in your styles.
+ * Variables can be used throughout your SASS files by using $[VAR NAME]
+ */
+/* ESSENCE BRAND COLOURS
+ ******************************/
+/* MEDIA QUERY BREAKPOINTS
+ * 
+ * Set up the media queries to run off ems instead of px.
+ *
+ ******************************/
+/* INCLUDE UI STYLING
+ ******************************/
+/**
+ * sass > ui > fonts.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ */
+/* HEADING STYLING
+ ******************************/
+/* BASIC TEXT STYLING
+ ******************************/
+p {
+  font-size: 0.875em;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+del {
+  color: #f00;
+  text-decoration: line-through;
+}
+
+/* LIST STYLING
+ ******************************/
+/**
+ * sass > ui > grid.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ *
+ * This file will build up the code for a responsive fluid layout using %
+ */
+/*
+ * Usage: simple-grid( $a, $b );
+ * Function for working out the column widths on a grid.
+ */
+/*
+ * Usage: gutter-grid( $a, $b, $c );
+ * Function for working out the column widths on a grid minus the guttering.
+ */
+/* INCLUDE LAYOUT STYLING
+ ******************************/
+/**
+ * sass > ui > layout.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ */
+html {
+  background-color: white;
+  font-size: 16px;
+}
+
+body {
+  background: blue;
+}
+body > section {
+  min-width: 320px;
+  max-width: 960px;
+  margin: 0 auto;
+  *zoom: 1;
+}
+body > section:before, body > section:after {
+  content: ' ';
+  display: table;
+}
+body > section:after {
+  clear: both;
+}
+body > section article {
+  width: 6.25%;
+  margin: 0 1.04167%;
+  float: left;
+  display: block;
+  background-color: rgba(255, 0, 0, 0.33);
+}
