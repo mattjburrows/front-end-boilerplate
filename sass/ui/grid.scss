@@ -6,18 +6,38 @@
  */
 
 
-/*
- * Usage: simple-grid( $a, $b );
- * Function for working out the column widths on a grid.
- */
-@function simple-grid( $count, $columns ) {
-    @return ( 100% / $count ) * $columns;
-}
-
-/*
- * Usage: gutter-grid( $a, $b, $c );
- * Function for working out the column widths on a grid minus the guttering.
- */
-@function gutter-grid( $count, $columns, $gutter ) {
-    @return ( ( 100% / $columns ) - ( $gutter * 2 ) ) * $count;
+.grid {
+    &,
+    .grid__row {
+        @include clearfix;
+    }
+    .grid__row {
+        @include rem("margin", 0 -10px);
+    }
+    .grid__column {
+        float: left;
+        display: block;
+        @include rem("padding", 0 10px);
+        // Set a variable for the amount of columns you want to use.
+        // In this case we are setting 12.
+        $grid-column: 12;
+        $column-inc: 1;
+        // Loop through and create grid columns based on the value of the $grid-column var.
+        @while $column-inc <= $grid-column {
+            &.grid--column-#{$column-inc}{
+                width: ( 100% / $grid-column ) * $column-inc;
+            }
+            $column-inc: ($column-inc + 1);
+        }
+        // Loop through and create percentage based columns.
+        // The amount is defined by how many values are set in the $grid-array var.
+        $grid-inc: 1;
+        $grid-array: 100%, 50%, 33.333333%, 25%, 20%, 16.666666%, 14.2857142857143%, 12.5%, 11.1111111111111%, 10%;
+        @while $grid-inc <= length($grid-array) {
+            &.grid--count-#{$grid-inc}{
+                width: nth($grid-array, $grid-inc);
+            }
+            $grid-inc: ($grid-inc + 1);
+        }
+    }
 }

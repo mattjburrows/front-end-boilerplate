@@ -66,9 +66,59 @@
 }
 
 /*
+ * Usage: simple-grid( $a, $b );
+ * Function for working out the column widths on a grid.
+ */
+@function simple-grid( $count, $columns ) {
+    @return ( 100% / $count ) * $columns;
+}
+
+/*
+ * Usage: gutter-grid( $a, $b, $c );
+ * Function for working out the column widths on a grid minus the guttering.
+ */
+@function gutter-grid( $count, $columns, $gutter ) {
+    @return ( ( 100% / $columns ) - ( $gutter * 2 ) ) * $count;
+}
+
+/*
  * Usage: @include ems( $a, $b );
  * Create a function to convert pixel values into ems.
  */
 @function ems( $a, $b ) {
     @return ( $a / $b ) * 1em;
+}
+
+/*
+ * Usage: @include rem($property, $px, $base);
+ * mixin for declaring rem values
+ * Baseline, measured in pixels
+ * The value should be the same as the font-size value for the html element
+ * If the html element's font-size is set to 62.5% (of the browser's default font-size of 16px),
+ * then the variable below would be 10px.
+ */
+@mixin rem($property, $px, $base: 16px) {
+    // Convert the baseline into rems
+    $rem: $base / 1rem;
+    // Print the first line in pixel values
+    #{$property}: $px;
+    // If there is only one (numeric) value, return the property/value line for it.
+    @if type-of($px) == "number" {
+        #{$property}: $px / $rem;
+    }
+    @else {
+        // Create an empty list that we can dump values into
+        $rem-values: unquote("");
+        @each $value in $px {
+            // If the value is zero, return 0
+            @if $value == 0 {
+                $rem-values: append($rem-values, $value);
+            }
+            @else {
+                $rem-values: append($rem-values, $value / $rem);
+            }
+        }
+        // Return the property and its list of converted values
+        #{$property}: $rem-values;
+    }
 }

@@ -67,28 +67,27 @@ module.exports = function(grunt) {
             // So listen out to changes to individual folder only.
             scripts: {
                 files: '<%= config.js %>app.js',
-                tasks: ['uglify:development'],
-                options: {
-                    event: ['changed']
-                }
+                tasks: ['uglify:development']
             },
             // Listen out to all changes to any file in the sass folder.
             styles: {
                 files: '<%= config.sass %>{,*/}*.{scss,sass}',
-                tasks: ['sass:development'],
-                options: {
-                    event: ['changed']
-                }
+                tasks: ['sass:development']
             }
         }
     });
 
     // Register the Grunt tasks.
+
+    // This is the task that can be run during the deployment process
+    // To trigger this task type 'grunt' into the CLI.
     grunt.registerTask('default', [
         'sass:production',
         'uglify:production'
     ]);
 
+    // If you don't want to watch files and run grunt once during development
+    // You can use 'grunt development' to compile the Sass and beautify the JS.
     grunt.registerTask('development', [
         'sass:development',
         'uglify:development'
