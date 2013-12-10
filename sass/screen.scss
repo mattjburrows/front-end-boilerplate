@@ -17,16 +17,21 @@
 @import "compass/reset";
 @import "compass/css3";
 
-/* INCLUDE CUSTOM HELPERS
- ******************************/
-@import "helpers/mixins";
-@import "helpers/variables";
+@import "defaults";
 
-/* INCLUDE UI STYLING
- ******************************/
-@import "ui/fonts";
-@import "ui/grid";
+@import "generic/clearfix";
+@import "generic/helpers";
+@import "generic/mixins";
 
-/* INCLUDE LAYOUT STYLING
- ******************************/
-@import "layout";
+@import "base/paragraphs";
+@import "base/headings";
+@import "base/lists";
+@import "base/forms";
+@import "base/images";
+
+@import "objects/grids";
+@import "objects/navigation";
+
+body {
+	background: blue;
+}

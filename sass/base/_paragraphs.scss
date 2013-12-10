@@ -1,0 +1,32 @@
+/**
+ * sass > base > _paragraphs.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ */
+
+/* BASIC TEXT STYLING
+ ******************************/
+
+p {
+    font-size: ems(14, 16);
+}
+
+small {}
+
+address {}
+
+em,
+i {
+    font-style: italic;
+}
+
+strong,
+b {
+    font-weight: 700;
+}
+
+del {
+    color: #f00;
+    text-decoration: line-through;
+}
+
+a {}

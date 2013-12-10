@@ -68,73 +68,38 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* INCLUDE CUSTOM HELPERS
+/**
+ * sass > _defaults.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ */
+/* DEFAULT BRAND COLOURS
+ ******************************/
+/*
+ * Set up the media query variables.
+ *
+ * DEFAULT SCREEN SIZES
+ ******************************/
+/* CONVERT SCREEN SIZES TO EMS
  ******************************/
 /**
- * sass > helpers > mixins.scss
+ * sass > generic > _clearfix.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ */
+/**
+ * sass > generic > _helpers.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ */
+/**
+ * sass > generic > _mixins.scss
  * @author Matthew Burrows <matthew.burrows@essencedigital.com>
  *
  * SASS Mixins are useful to automate common styling patterns.
  * Mixins can be used throughout your SASS files by using @include [MIXIN NAME]
  */
-/*
- * Usage: @include clearfix;
- * Create a simple mixin for clearing floats.
- */
-/*
- * Usage: @include inline-block;
- * Create a simple mixin for older browsers to support display: inlin-block;
- */
-/*
- * Usage: @include vendor( $a, $b );
- * Create a mixin to return a vendor specific property.
- */
-/*
- * Usage: keyframe( $a ) { $b };
- * Create a mixin to return vendor specific animations.
- */
-/*
- * Usage: simple-grid( $a, $b );
- * Function for working out the column widths on a grid.
- */
-/*
- * Usage: gutter-grid( $a, $b, $c );
- * Function for working out the column widths on a grid minus the guttering.
- */
-/*
- * Usage: @include ems( $a, $b );
- * Create a function to convert pixel values into ems.
- */
-/*
- * Usage: @include rem($property, $px, $base);
- * mixin for declaring rem values
- * Baseline, measured in pixels
- * The value should be the same as the font-size value for the html element
- * If the html element's font-size is set to 62.5% (of the browser's default font-size of 16px),
- * then the variable below would be 10px.
- */
 /**
- * sass > helpers > variables.scss
- * @author Matthew Burrows <matthew.burrows@essencedigital.com>
- *
- * SASS Variables are useful to save rewriting the same values over and over in your styles.
- * Variables can be used throughout your SASS files by using $[VAR NAME]
- */
-/* ESSENCE BRAND COLOURS
- ******************************/
-/* MEDIA QUERY BREAKPOINTS
- * 
- * Set up the media queries to run off ems instead of px.
- *
- ******************************/
-/* INCLUDE UI STYLING
- ******************************/
-/**
- * sass > ui > fonts.scss
+ * sass > base > _paragraphs.scss
  * @author Matthew Burrows <matthew.burrows@essencedigital.com>
  */
-/* HEADING STYLING
- ******************************/
 /* BASIC TEXT STYLING
  ******************************/
 p {
@@ -156,10 +121,38 @@ del {
   text-decoration: line-through;
 }
 
+/**
+ * sass > base > _headings.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ */
+/* HEADING STYLING
+ ******************************/
+/**
+ * sass > base > _lists.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ */
 /* LIST STYLING
  ******************************/
 /**
- * sass > ui > grid.scss
+ * sass > base > _forms.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ */
+/**
+ * sass > base > _images.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+img[width],
+img[height] {
+  max-width: none;
+}
+
+/**
+ * sass > objects > _grids.scss
  * @author Matthew Burrows <matthew.burrows@essencedigital.com>
  *
  * This file will build up the code for a responsive fluid layout using %
@@ -255,37 +248,10 @@ del {
   width: 10%;
 }
 
-/* INCLUDE LAYOUT STYLING
- ******************************/
 /**
- * sass > ui > layout.scss
+ * sass > objects > _navigation.scss
  * @author Matthew Burrows <matthew.burrows@essencedigital.com>
  */
-html {
-  background-color: white;
-  font-size: 16px;
-}
-
 body {
   background: blue;
-}
-body > section {
-  min-width: 320px;
-  max-width: 960px;
-  margin: 0 auto;
-  *zoom: 1;
-}
-body > section:before, body > section:after {
-  content: ' ';
-  display: table;
-}
-body > section:after {
-  clear: both;
-}
-body > section article {
-  width: 6.25%;
-  margin: 0 1.04167%;
-  float: left;
-  display: block;
-  background-color: rgba(255, 0, 0, 0.33);
 }

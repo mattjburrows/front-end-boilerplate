@@ -1,0 +1,144 @@
+/**
+ * sass > generic > _mixins.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ *
+ * SASS Mixins are useful to automate common styling patterns.
+ * Mixins can be used throughout your SASS files by using @include [MIXIN NAME]
+ */
+
+// Create a simple mixin for older browsers to support display: inlin-block;
+// 
+// No compatibility issues.
+@mixin inline-block {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+
+// Create a mixin to return a vendor specific property.
+// 
+// $property - The non prefixed property.
+// $value    - The value of the property.
+// 
+// Compatible with all modern browsers that support the given property.
+@mixin vendor($property, $value) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+    #{$property}: $value;
+}
+
+// Create vendor specific animations.
+// 
+// $animation-name - The animation name.
+// 
+// Compatible with all modern browsers that support CSS animations.
+@mixin keyframe($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+// Create a % based grid.
+// 
+// $count   - The column value.
+// $xolumns - The overall count of columns.
+// 
+// No compatibility issues.
+@function simple-grid($count, $columns) {
+    @return 100% / $count * $columns;
+}
+
+// Convert pixel values into EMs.
+// 
+// $px   - The pixel value that will get converted to EMs.
+// $base - The base value used to convert the pixel value to EMs.
+// 
+// No compatibility issues.
+@function ems($px, $base) {
+    @return $px / $base * 1em;
+}
+
+// Mixin for declaring REM values.
+// 
+// $property - CSS property for add REM values to.
+// $px       - The pixel value that will get converted to REMs.
+// $base     - Optional, Set the base value to work out the REM value from (defaults to 16px).
+// 
+// Compatible with all modern browsers that support REMs.
+@mixin rem($property, $px, $base: 16px) {
+    // Convert the baseline into rems
+    $rem: $base / 1rem;
+    // Print the first line in pixel values
+    #{$property}: $px;
+    // If there is only one (numeric) value, return the property/value line for it.
+    @if type-of($px) == "number" {
+        #{$property}: $px / $rem;
+    }
+    @else {
+        // Create an empty list that we can dump values into
+        $rem-values: unquote("");
+        @each $value in $px {
+            // If the value is zero, return 0
+            @if $value == 0 {
+                $rem-values: append($rem-values, $value);
+            }
+            @else {
+                $rem-values: append($rem-values, $value / $rem);
+            }
+        }
+        // Return the property and its list of converted values
+        #{$property}: $rem-values;
+    }
+}
+
+// Mixin for building media queries. Media queries build up from user defined values or from the _default.scss file.
+// 
+// $media-query - String identifier for the media query to build.
+// 
+// Compatible with all modern browsers that support media queries.
+@mixin media-query($media-query) {
+    @if $media-query == x-small {
+        @media only screen and (max-width: $x-small-screen-start) {
+            @content;
+        }
+    }
+    @if $media-query == small {
+        @media only screen and (min-width: $small-screen-start) and (max-width: $small-screen-end) {
+            @content;
+        }
+    }
+    @if $media-query == medium {
+        @media only screen and (min-width: $medium-screen-start) {
+            @content;
+        }
+    }
+    @if $media-query == large {
+        @media only screen and (min-width: $large-screen-start) {
+            @content;
+        }
+    }
+    @if $media-query == x-large {
+        @media only screen and (min-width: $x-large-screen-start) {
+            @content;
+        }
+    }
+}

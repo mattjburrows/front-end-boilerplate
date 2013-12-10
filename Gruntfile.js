@@ -71,6 +71,9 @@ module.exports = function(grunt) {
             },
             // Listen out to all changes to any file in the sass folder.
             styles: {
+                options: {
+                    livereload: true
+                },
                 files: '<%= config.sass %>{,*/}*.{scss,sass}',
                 tasks: ['sass:development']
             }

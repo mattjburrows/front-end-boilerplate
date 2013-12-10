@@ -1,10 +1,9 @@
 /**
- * sass > ui > grid.scss
+ * sass > objects > _grids.scss
  * @author Matthew Burrows <matthew.burrows@essencedigital.com>
  *
  * This file will build up the code for a responsive fluid layout using %
  */
-
 
 .grid {
     &,
@@ -24,20 +23,20 @@
         $column-inc: 1;
         // Loop through and create grid columns based on the value of the $grid-column var.
         @while $column-inc <= $grid-column {
-            &.grid--column-#{$column-inc}{
-                width: ( 100% / $grid-column ) * $column-inc;
+            &.grid--column-#{$column-inc} {
+                width: 100% / $grid-column * $column-inc;
             }
-            $column-inc: ($column-inc + 1);
+            $column-inc: $column-inc + 1;
         }
         // Loop through and create percentage based columns.
         // The amount is defined by how many values are set in the $grid-array var.
         $grid-inc: 1;
-        $grid-array: 100%, 50%, 33.333333%, 25%, 20%, 16.666666%, 14.2857142857143%, 12.5%, 11.1111111111111%, 10%;
+        $grid-array: 100%, 50%, 33.33333%, 25%, 20%, 16.66667%, 14.28571%, 12.5%, 11.11111%, 10%;
         @while $grid-inc <= length($grid-array) {
-            &.grid--count-#{$grid-inc}{
+            &.grid--count-#{$grid-inc} {
                 width: nth($grid-array, $grid-inc);
             }
-            $grid-inc: ($grid-inc + 1);
+            $grid-inc: $grid-inc + 1;
         }
     }
 }
