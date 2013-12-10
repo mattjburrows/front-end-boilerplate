@@ -71,11 +71,14 @@ module.exports = function(grunt) {
             },
             // Listen out to all changes to any file in the sass folder.
             styles: {
+                files: '<%= config.sass %>{,*/}*.{scss,sass}',
+                tasks: ['sass:development']
+            },
+            css: {
                 options: {
                     livereload: true
                 },
-                files: '<%= config.sass %>{,*/}*.{scss,sass}',
-                tasks: ['sass:development']
+                files: '<%= config.css %>screen.css',
             }
         }
     });
