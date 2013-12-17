@@ -17,11 +17,13 @@
 @import "compass/reset";
 @import "compass/css3";
 
-@import "defaults";
-
 @import "generic/clearfix";
 @import "generic/helpers";
 @import "generic/mixins";
+
+@import "defaults";
+
+@import "layout";
 
 @import "base/paragraphs";
 @import "base/headings";
@@ -31,3 +33,4 @@
 
 @import "objects/grids";
 @import "objects/navigation";
+@import "objects/boxes";

@@ -18,13 +18,21 @@ module.exports = function(grunt) {
             root: ROOT_DIR,
             sass: SASS_DIR,
             css: CSS_DIR,
-            js: JS_DIR
+            js: JS_DIR,
+            version: '0.1.0',
+            banner: '/**\n' +
+                ' * <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
+                ' * <%= pkg.homepage %>\n' +
+                ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %> | <%= pkg.author.email %>; Licensed MIT\n' + 
+                ' */'
+
         },
         pkg: grunt.file.readJSON('package.json'),
         sass: {
             development: {
                 options: {
-                    style: 'expanded',
+                    banner: '<%= config.banner %>',
+                    style: 'nested',
                     compass: 'config.rb'
                 },
                 src: ['<%= config.sass %>screen.scss'],
@@ -32,6 +40,7 @@ module.exports = function(grunt) {
             },
             production: {
                 options: {
+                    banner: '<%= config.banner %>',
                     style: 'compressed',
                     compass: 'config.rb'
                 },
@@ -42,6 +51,7 @@ module.exports = function(grunt) {
         uglify: {
             development: {
                 options: {
+                    banner: '<%= config.banner %>',
                     mangle: false,
                     compress: false,
                     beautify: true,
@@ -53,6 +63,7 @@ module.exports = function(grunt) {
             },
             production: {
                 options: {
+                    banner: '<%= config.banner %>',
                     mangle: false
                 },
                 files: {

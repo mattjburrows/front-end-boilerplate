@@ -1,6 +1,12 @@
 {
     "name": "essence-frontend-boilerplate",
     "version": "0.1.0",
+    "homepage": "http://essencedigital.github.io",
+    "author": {
+        "name": "Matthew Burrows",
+        "email": "matthew.burrows@essencedigital.com",
+        "url": "http://www.essencedigital.com"
+    },
     "devDependencies": {
         "grunt": "~0.4.0",
         "grunt-contrib-sass": "~0.5.0",

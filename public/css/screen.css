@@ -1,4 +1,9 @@
 /**
+ * essence-frontend-boilerplate - v0.1.0 - 2013-12-17
+ * http://essencedigital.github.io
+ * Copyright (c) 2013 Matthew Burrows | matthew.burrows@essencedigital.com; Licensed MIT
+ */
+/**
  * sass > screen.scss
  * @author Matthew Burrows <matthew.burrows@essencedigital.com>
  *
@@ -30,44 +35,59 @@ time, mark, audio, video {
   border: 0;
   font: inherit;
   font-size: 100%;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
 html {
-  line-height: 1;
-}
+  line-height: 1; }
 
 ol, ul {
-  list-style: none;
-}
+  list-style: none; }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
+  border-spacing: 0; }
 
 caption, th, td {
   text-align: left;
   font-weight: normal;
-  vertical-align: middle;
-}
+  vertical-align: middle; }
 
 q, blockquote {
-  quotes: none;
-}
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none;
-}
+  quotes: none; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
 
 a img {
-  border: none;
-}
+  border: none; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
-  display: block;
-}
+  display: block; }
 
+/**
+ * sass > generic > _clearfix.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ */
+/**
+ * sass > generic > _helpers.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ */
+.align-left {
+  text-align: left; }
+
+.align-center {
+  text-align: center; }
+
+.align-right {
+  text-align: right; }
+
+/**
+ * sass > generic > _mixins.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ *
+ * SASS Mixins are useful to automate common styling patterns.
+ * Mixins can be used throughout your SASS files by using @include [MIXIN NAME]
+ */
 /**
  * sass > _defaults.scss
  * @author Matthew Burrows <matthew.burrows@essencedigital.com>
@@ -82,20 +102,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* CONVERT SCREEN SIZES TO EMS
  ******************************/
 /**
- * sass > generic > _clearfix.scss
- * @author Matthew Burrows <matthew.burrows@essencedigital.com>
- */
-/**
- * sass > generic > _helpers.scss
- * @author Matthew Burrows <matthew.burrows@essencedigital.com>
- */
-/**
- * sass > generic > _mixins.scss
+ * sass > _layout.scss
  * @author Matthew Burrows <matthew.burrows@essencedigital.com>
  *
- * SASS Mixins are useful to automate common styling patterns.
- * Mixins can be used throughout your SASS files by using @include [MIXIN NAME]
  */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 /**
  * sass > base > _paragraphs.scss
  * @author Matthew Burrows <matthew.burrows@essencedigital.com>
@@ -103,23 +118,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* BASIC TEXT STYLING
  ******************************/
 p {
-  font-size: 0.875em;
-}
+  font-size: 0.875em; }
 
 em,
 i {
-  font-style: italic;
-}
+  font-style: italic; }
 
 strong,
 b {
-  font-weight: 700;
-}
+  font-weight: 700; }
 
 del {
   color: #f00;
-  text-decoration: line-through;
-}
+  text-decoration: line-through; }
 
 /**
  * sass > base > _headings.scss
@@ -143,13 +154,11 @@ del {
  */
 img {
   max-width: 100%;
-  height: auto;
-}
+  height: auto; }
 
 img[width],
 img[height] {
-  max-width: none;
-}
+  max-width: none; }
 
 /**
  * sass > objects > _grids.scss
@@ -157,98 +166,96 @@ img[height] {
  *
  * This file will build up the code for a responsive fluid layout using %
  */
+.grid.grid--alpha {
+  margin: 0 20px;
+  margin:  0 1.25rem; }
 .grid,
 .grid .grid__row {
-  *zoom: 1;
-}
-.grid:before, .grid:after,
-.grid .grid__row:before,
-.grid .grid__row:after {
-  content: ' ';
-  display: table;
-}
-.grid:after,
-.grid .grid__row:after {
-  clear: both;
-}
+  *zoom: 1; }
+  .grid:before, .grid:after,
+  .grid .grid__row:before,
+  .grid .grid__row:after {
+    content: ' ';
+    display: table; }
+  .grid:after,
+  .grid .grid__row:after {
+    clear: both; }
 .grid .grid__row {
   margin: 0 -10px;
-  margin:  0 -0.625rem;
-}
+  margin:  0 -0.625rem; }
 .grid .grid__column {
   float: left;
   display: block;
   padding: 0 10px;
-  padding:  0 0.625rem;
-}
-.grid .grid__column.grid--column-1 {
-  width: 8.33333%;
-}
-.grid .grid__column.grid--column-2 {
-  width: 16.66667%;
-}
-.grid .grid__column.grid--column-3 {
-  width: 25%;
-}
-.grid .grid__column.grid--column-4 {
-  width: 33.33333%;
-}
-.grid .grid__column.grid--column-5 {
-  width: 41.66667%;
-}
-.grid .grid__column.grid--column-6 {
-  width: 50%;
-}
-.grid .grid__column.grid--column-7 {
-  width: 58.33333%;
-}
-.grid .grid__column.grid--column-8 {
-  width: 66.66667%;
-}
-.grid .grid__column.grid--column-9 {
-  width: 75%;
-}
-.grid .grid__column.grid--column-10 {
-  width: 83.33333%;
-}
-.grid .grid__column.grid--column-11 {
-  width: 91.66667%;
-}
-.grid .grid__column.grid--column-12 {
-  width: 100%;
-}
-.grid .grid__column.grid--count-1 {
-  width: 100%;
-}
-.grid .grid__column.grid--count-2 {
-  width: 50%;
-}
-.grid .grid__column.grid--count-3 {
-  width: 33.33333%;
-}
-.grid .grid__column.grid--count-4 {
-  width: 25%;
-}
-.grid .grid__column.grid--count-5 {
-  width: 20%;
-}
-.grid .grid__column.grid--count-6 {
-  width: 16.66667%;
-}
-.grid .grid__column.grid--count-7 {
-  width: 14.28571%;
-}
-.grid .grid__column.grid--count-8 {
-  width: 12.5%;
-}
-.grid .grid__column.grid--count-9 {
-  width: 11.11111%;
-}
-.grid .grid__column.grid--count-10 {
-  width: 10%;
-}
+  padding:  0 0.625rem; }
+  @media only screen and (max-width: 47.9375em) {
+    .grid .grid__column.sml--column-1-4 {
+      width: 25%; }
+    .grid .grid__column.sml--column-2-4 {
+      width: 50%; }
+    .grid .grid__column.sml--column-3-4 {
+      width: 75%; }
+    .grid .grid__column.sml--column-4-4 {
+      width: 100%; } }
+  @media only screen and (min-width: 48em) and (max-width: 59.9375em) {
+    .grid .grid__column.med--column-1-6 {
+      width: 16.66667%; }
+    .grid .grid__column.med--column-2-6 {
+      width: 33.33333%; }
+    .grid .grid__column.med--column-3-6 {
+      width: 50%; }
+    .grid .grid__column.med--column-4-6 {
+      width: 66.66667%; }
+    .grid .grid__column.med--column-5-6 {
+      width: 83.33333%; }
+    .grid .grid__column.med--column-6-6 {
+      width: 100%; } }
+  @media only screen and (min-width: 60em) {
+    .grid .grid__column.lrg--column-1-12 {
+      width: 8.33333%; }
+    .grid .grid__column.lrg--column-2-12 {
+      width: 16.66667%; }
+    .grid .grid__column.lrg--column-3-12 {
+      width: 25%; }
+    .grid .grid__column.lrg--column-4-12 {
+      width: 33.33333%; }
+    .grid .grid__column.lrg--column-5-12 {
+      width: 41.66667%; }
+    .grid .grid__column.lrg--column-6-12 {
+      width: 50%; }
+    .grid .grid__column.lrg--column-7-12 {
+      width: 58.33333%; }
+    .grid .grid__column.lrg--column-8-12 {
+      width: 66.66667%; }
+    .grid .grid__column.lrg--column-9-12 {
+      width: 75%; }
+    .grid .grid__column.lrg--column-10-12 {
+      width: 83.33333%; }
+    .grid .grid__column.lrg--column-11-12 {
+      width: 91.66667%; }
+    .grid .grid__column.lrg--column-12-12 {
+      width: 100%; } }
 
 /**
  * sass > objects > _navigation.scss
  * @author Matthew Burrows <matthew.burrows@essencedigital.com>
  */
+/**
+ * sass > objects > _boxes.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ *
+ */
+.box {
+  display: block;
+  margin: 0 0 20px 0;
+  margin:  0 0 1.25rem 0; }
+  .box.box--alpha {
+    padding: 8px;
+    padding: 0.5rem;
+    background: #fefefe;
+    border: 1px solid #efefef;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px; }

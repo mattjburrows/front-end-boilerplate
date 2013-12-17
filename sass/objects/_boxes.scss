@@ -1,0 +1,16 @@
+/**
+ * sass > objects > _boxes.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ *
+ */
+
+.box {
+    display: block;
+    @include rem("margin", 0 0 20px 0);
+    &.box--alpha {
+        @include rem('padding', 8px);
+        background: #fefefe;
+        border: 1px solid #efefef;
+        @include border-radius(5px);
+    }
+}

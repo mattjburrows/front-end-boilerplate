@@ -1,0 +1,9 @@
+/**
+ * sass > _layout.scss
+ * @author Matthew Burrows <matthew.burrows@essencedigital.com>
+ *
+ */
+
+* {
+    @include box-sizing(border-box);
+}

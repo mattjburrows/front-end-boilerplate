@@ -23,6 +23,8 @@ $brand-secondary-charlie: #8ac540 !default; // Green.
  * DEFAULT SCREEN SIZES
  ******************************/
 
+$responsive: true !default;
+
 $x-small-screen: 320px !default;
 $small-screen: 480px !default;
 $medium-screen: 768px !default;
@@ -32,7 +34,7 @@ $x-large-screen: 1024px !default;
 /* CONVERT SCREEN SIZES TO EMS
  ******************************/
 
-$x-small-screen-start: ems($small-screen, $base-font) !default;
+$x-small-screen-start: ems($small-screen - 1, $base-font) !default;
 
 $small-screen-start: ems($small-screen, $base-font) !default;
 $small-screen-end: ems($medium-screen - 1, $base-font) !default;

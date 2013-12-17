@@ -6,6 +6,9 @@
  */
 
 .grid {
+    &.grid--alpha {
+        @include rem("margin", 0 20px);
+    }
     &,
     .grid__row {
         @include clearfix;
@@ -17,26 +20,47 @@
         float: left;
         display: block;
         @include rem("padding", 0 10px);
-        // Set a variable for the amount of columns you want to use.
-        // In this case we are setting 12.
-        $grid-column: 12;
-        $column-inc: 1;
-        // Loop through and create grid columns based on the value of the $grid-column var.
-        @while $column-inc <= $grid-column {
-            &.grid--column-#{$column-inc} {
-                width: 100% / $grid-column * $column-inc;
+        @if true == $responsive {
+            $sml-grid-column: 4;
+            $sml-column-inc: 1;
+            @include media-query('small-only') {
+                @while $sml-column-inc <= $sml-grid-column {
+                    &.sml--column-#{$sml-column-inc}-#{$sml-grid-column} {
+                        width: (100% / $sml-grid-column) * $sml-column-inc;
+                    }
+                    $sml-column-inc: $sml-column-inc + 1;
+                }
             }
-            $column-inc: $column-inc + 1;
+            $med-grid-column: 6;
+            $med-column-inc: 1;
+            @include media-query('medium-only') {
+                @while $med-column-inc <= $med-grid-column {
+                    &.med--column-#{$med-column-inc}-#{$med-grid-column} {
+                        width: (100% / $med-grid-column) * $med-column-inc;
+                    }
+                    $med-column-inc: $med-column-inc + 1;
+                }
+            }
+            $lrg-grid-column: 12;
+            $lrg-column-inc: 1;
+            @include media-query('large') {
+                @while $lrg-column-inc <= $lrg-grid-column {
+                    &.lrg--column-#{$lrg-column-inc}-#{$lrg-grid-column} {
+                        width: (100% / $lrg-grid-column) * $lrg-column-inc;
+                    }
+                    $lrg-column-inc: $lrg-column-inc + 1;
+                }
+            }
         }
-        // Loop through and create percentage based columns.
-        // The amount is defined by how many values are set in the $grid-array var.
-        $grid-inc: 1;
-        $grid-array: 100%, 50%, 33.33333%, 25%, 20%, 16.66667%, 14.28571%, 12.5%, 11.11111%, 10%;
-        @while $grid-inc <= length($grid-array) {
-            &.grid--count-#{$grid-inc} {
-                width: nth($grid-array, $grid-inc);
+        @else {
+            $grid-column: 12;
+            $column-inc: 1;
+            @while $column-inc <= $grid-column {
+                &.column--#{$column-inc}-#{$grid-column} {
+                    width: (100% / $grid-column) * $column-inc;
+                }
+                $column-inc: $column-inc + 1;
             }
-            $grid-inc: $grid-inc + 1;
         }
     }
 }

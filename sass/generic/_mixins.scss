@@ -116,27 +116,42 @@
 // 
 // Compatible with all modern browsers that support media queries.
 @mixin media-query($media-query) {
-    @if $media-query == x-small {
+    @if 'x-small' == $media-query {
         @media only screen and (max-width: $x-small-screen-start) {
             @content;
         }
     }
-    @if $media-query == small {
-        @media only screen and (min-width: $small-screen-start) and (max-width: $small-screen-end) {
+    @if 'small-only' == $media-query {
+        @media only screen and (max-width: $small-screen-end) {
             @content;
         }
     }
-    @if $media-query == medium {
+    @if 'small' == $media-query {
+        @media only screen and (min-width: $small-screen-start) {
+            @content;
+        }
+    }
+    @if 'medium-only' == $media-query {
+        @media only screen and (min-width: $medium-screen-start) and (max-width: $medium-screen-end) {
+            @content;
+        }
+    }
+    @if 'medium' == $media-query {
         @media only screen and (min-width: $medium-screen-start) {
             @content;
         }
     }
-    @if $media-query == large {
+    @if 'large-only' == $media-query {
+        @media only screen and (min-width: $large-screen-start) and (max-width: $large-screen-end) {
+            @content;
+        }
+    }
+    @if 'large' == $media-query {
         @media only screen and (min-width: $large-screen-start) {
             @content;
         }
     }
-    @if $media-query == x-large {
+    @if 'x-large' == $media-query {
         @media only screen and (min-width: $x-large-screen-start) {
             @content;
         }
